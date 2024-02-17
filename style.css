@@ -75,8 +75,8 @@ body{
 }
 .wrapper{
   position: relative;
-  width: 400px;
-  height: 440px;
+  width: 100vw;
+  height: 100vh;
   background: solid;
   border: 2px solid black;
   border-radius: 0px;
@@ -98,7 +98,7 @@ transform: scale(1);
 
 
 .wrapper.active {
-  height:520px;
+  height:100vh;
 }
 .wrapper .form-box.login
 {
@@ -108,13 +108,13 @@ transform: scale(1);
 
 .wrapper.active .form-box.login{
   transition: none;
-  transform: translateX(-400px);
+  transform: translateX(-4000px);
 }
 
 .wrapper .form-box.register{
   position: absolute;
   transition: none;
-  transform: translateX(400px);
+  transform: translateX(4000px);
 }
 .wrapper.active .form-box.register{
     transition: transform .18s ease;
