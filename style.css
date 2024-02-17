@@ -81,7 +81,7 @@ body{
   border: 2px solid black;
   border-radius: 0px;
   display: flex;
-  backdrop-filter:brightness(50%);
+  backdrop-filter:brightness(20%);
   box-shadow: 0 0 30px black;
   justify-content: center;
   align-items: center;
