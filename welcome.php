@@ -1,3 +1,16 @@
+<?php 
+  session_start(); 
+
+  if (!isset($_SESSION['username'])) {
+  	$_SESSION['msg'] = "You must log in first";
+  	header('location: login.php');
+  }
+  if (isset($_GET['logout'])) {
+  	session_destroy();
+  	unset($_SESSION['username']);
+  	header("location: index.php");
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <!-- head -->
@@ -25,8 +38,7 @@
     <header>
       <h2 class="logo">LOGO</h2>
       <nav class="navigation">
-
-        <button class="btnLogin-popup">Login</button>
+        <a href="index.php?logout='1'">logout</a>
       </nav>
     </header>
     <div id="overlay">

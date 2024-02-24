@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-family: 'PT Sans', sans-serif;
     overflow: hidden;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
   }
   
   header {
@@ -357,3 +360,4 @@
   .icon-home{
     cursor: pointer;
   }
+  
