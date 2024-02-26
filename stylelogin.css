@@ -1,0 +1,157 @@
+/* ==== Global ==== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'PT Sans', sans-serif;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    overflow: hidden;
+  }
+  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+  }
+  
+  .logo {
+    font-size: 2em;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .navigation a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 1000;
+    margin-left: 40px;
+  }
+  
+  .navigation a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: white;
+    border-radius: 5px;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .5s;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width:100vw;
+    background: url('images/bg.gif') no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  bottom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    justify-content: center;
+    /* margin-left: 5%; */
+  }
+  .toolbars {
+    width: 100%;
+    height: 60px;
+    background: #000000;
+    justify-content: center;
+    opacity: 0.7;
+    position: relative;
+    display: flex;
+    align-items: center;
+    /*border-radius: 10px;*/
+    margin-bottom: 0.5cm;
+    /*border: 1.5px solid azure;*/
+  
+  }
+  
+  .toolbars ul {
+    display: flex;
+    width: 300px;
+  
+  }
+  
+  .toolbars ul li {
+    position: relative;
+    list-style: none;
+    width: 70%;
+    z-index: 99;
+  
+  }
+  
+  .toolbars ul li a {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 2px;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+  
+  }
+  
+  .toolbars ul li a .icon {
+    position: fixed;
+    display: block;
+    font-size: 1cm;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .toolbars ul li a:focus .icon {
+    position: fixed;
+    content: '';
+    margin: auto;
+    display: inline-block;
+    padding: 5px 8px;
+    background: rgb(43, 44, 44);
+    border-radius: 50px;
+    
+    
+  }
+  .icon-music{
+    cursor: pointer;
+  }
+  .music{
+    transform: scale(0) translateY(5000px);
+    transition: transform 1s ease;
+    
+  }
+  .music.active{
+    transform: scale(1) translateY(300px);
+  }
+  .icon-stat{
+    cursor: pointer;
+  }
+  .icon-time{
+    cursor: pointer;
+  }
+  .icon-home{
+    cursor: pointer;
+  }
