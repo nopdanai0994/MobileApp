@@ -23,10 +23,11 @@
   }
   
   .logo {
-    font-size: 2em;
-    color: #fff;
-    text-decoration: none;
+    margin-left: -25px;
+    margin-top: -20px;
   }
+  .navigation{margin-top: -25px;
+   margin-right: -10px;}
   
   .navigation a {
     position: relative;

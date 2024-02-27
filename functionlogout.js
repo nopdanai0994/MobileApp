@@ -8,100 +8,101 @@ const music = document.querySelector(".music");
 const iconstat = document.querySelector(".icon-stat");
 const icontime = document.querySelector(".icon-time");
 const iconhome = document.querySelector(".icon-home");
-const plus = document.querySelector(".plus"),
-      minus = document.querySelector(".minus"),
-      num = document.querySelector(".num"),
-      alertBox = document.getElementById("alert");
-
-let numValue = 5;
-let interval;
-let timeLeft = numValue * 60;
-
+const time = document.querySelector(".clock");
+const back = document.querySelector(".background")
+const iconbg = document.querySelector(".iconbg");
+const bg1 = document.querySelector(".bg1");
+const bg2 = document.querySelector(".bg2");
+var html = document.querySelector('body');
 function toggleMusicActiveClass() {
     music.classList.toggle('active');
   }
-/*function toggleStatActiveClass() {
-    wrapper.classList.toggle('active-popup');
+function toggleStatActiveClass() {
+    time.classList.toggle('active');
   }
 function toggleTimeActiveClass() {
-    wrapper.classList.toggle('active-popup');
+    time.classList.toggle('active');
   }
 function toggleHomeActiveClass() {
     music.classList.remove('active');
+    time.classList.remove('active');
 
   }
-  
-registerLink.addEventListener("click", () => {
-  wrapper.classList.add("active");
-});
-loginLink.addEventListener("click", () => {
-  wrapper.classList.remove("active");
-});
-btnPopup.addEventListener("click", () => {
-  wrapper.classList.add("active-popup");
-});
-iconClose.addEventListener("click", () => {
-  wrapper.classList.remove("active-popup");
-});*/
+  function toggleBGActiveClass() {
+    back.classList.toggle('active');
+
+  }
+  function backgrounds1(){
+    html.style.backgroundImage = "url('images/bg.gif')";
+  }
+  function backgrounds2(){
+    html.style.backgroundImage = "url('images/bg1.gif')";
+  }
+
 iconmusics.addEventListener('click', toggleMusicActiveClass);
-/*iconstat.addEventListener('click', toggleStatActiveClass);
+iconstat.addEventListener('click', toggleStatActiveClass);
 icontime.addEventListener('click', toggleTimeActiveClass);
-iconhome.addEventListener('click', toggleHomeActiveClass);*/
-function updateNumber() {
-  const minutes = Math.floor(timeLeft / 60);
-  let seconds = timeLeft % 60;
-  seconds = seconds < 10 ? "0" + seconds : seconds;
-  num.innerText = `${minutes}:${seconds}`;
-}
+iconhome.addEventListener('click', toggleHomeActiveClass);
+iconbg.addEventListener('click', toggleBGActiveClass);
+bg1.addEventListener('click', backgrounds1);
+bg2.addEventListener('click', backgrounds2);
 
-function startTimer() {
-  if (interval) {
-      return;
+/*time*/
+let hr = min = sec = ms = "0" + 0,
+startTimer;
+
+const startBtn = document.querySelector(".start"),
+stopBtn = document.querySelector(".stop"),
+resetBtn = document.querySelector(".reset");
+
+startBtn.addEventListener("click", start);
+stopBtn.addEventListener("click", stop);
+resetBtn.addEventListener("click", reset);
+
+function start() {
+startBtn.classList.add("active");
+stopBtn.classList.remove("stopActive");
+
+startTimer = setInterval(() => {
+  ms++
+  ms = ms < 10 ? "0" + ms : ms;
+
+  if (ms == 100) {
+    sec++;
+    sec = sec < 10 ? "0" + sec : sec;
+    ms = "0" + 0;
   }
-  interval = setInterval(() => {
-      timeLeft--;
-      updateNumber();
-      if (timeLeft === 0) {
-          clearInterval(interval);
-          alertBox.innerText = "Time's up!";
-          alertBox.style.display = "block";
-      }
-  }, 1000);
-  document.getElementById("start").disabled = true;
-}
-
-function stopTimer() {
-  clearInterval(interval);
-  interval = null;
-  document.getElementById("start").disabled = false;
-}
-
-
-function resetTimer() {
-  clearInterval(interval);
-  timeLeft = numValue * 60;
-  updateNumber();
-  alertBox.style.display = "none";
-}
-
-plus.addEventListener("click", () => {
-  if (numValue < 60) {
-      numValue += 5;
-      timeLeft = numValue * 60;
-      updateNumber();
+  if (sec == 60) {
+    min++;
+    min = min < 10 ? "0" + min : min;
+    sec = "0" + 0;
   }
-});
-
-minus.addEventListener("click", () => {
-  if (numValue > 5) {
-      numValue -= 5;
-      timeLeft = numValue * 60;
-      updateNumber();
+  if (min == 60) {
+    hr++;
+    hr = hr < 10 ? "0" + hr : hr;
+    min = "0" + 0;
   }
-});
+  putValue();
+}, 10);
 
-document.getElementById("start").addEventListener("click", startTimer);
-document.getElementById("stop").addEventListener("click", stopTimer);
-document.getElementById("reset").addEventListener("click", resetTimer);
+}
 
-updateNumber();
+function stop() {
+startBtn.classList.remove("active");
+stopBtn.classList.add("stopActive");
+clearInterval(startTimer);
+}
+function reset() {
+startBtn.classList.remove("active");
+stopBtn.classList.remove("stopActive");
+clearInterval(startTimer);
+hr = min = sec = ms = "0" + 0;
+putValue();
+}
+
+function putValue() {
+document.querySelector(".millisecond").innerText = ms;
+document.querySelector(".second").innerText = sec;
+document.querySelector(".minute").innerText = min;
+document.querySelector(".hour").innerText = hr;
+}

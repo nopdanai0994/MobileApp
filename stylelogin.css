@@ -9,7 +9,16 @@
     color: #fff;
     overflow: hidden;
   }
-  
+  #overlay {
+    position: fixed; /* Sit on top of the page content */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+  }
   header {
     position: fixed;
     top: 0;
@@ -23,11 +32,10 @@
   }
   
   .logo {
-    font-size: 2em;
-    color: #fff;
-    text-decoration: none;
+    margin-left: -25px;
+    margin-top: -20px;
   }
-  
+  .navigation{margin-top: -25px;}
   .navigation a {
     position: relative;
     font-size: 1.1em;
@@ -139,12 +147,15 @@
     cursor: pointer;
   }
   .music{
-    transform: scale(0) translateY(5000px);
+    margin-left: 16px;
+    transform: scale(1) translateY(900px) ;
     transition: transform 1s ease;
+    position:relative;
+
     
   }
   .music.active{
-    transform: scale(1) translateY(300px);
+    transform: scale(1) translateY(400px);
   }
   .icon-stat{
     cursor: pointer;
@@ -155,3 +166,92 @@
   .icon-home{
     cursor: pointer;
   }
+
+  .iconbg{
+    cursor: pointer;
+  }
+
+  .clock {
+    user-select: none;
+    transform: scale(1) translateY(2500px);
+    transition: transform 1s ease;
+  }
+  .clock.active{
+    transform: scale(1) translateY(300px);
+  }
+  
+  .clock .time {
+    margin-left: 40px;
+    background: hsl(0, 2%, 17%);
+    opacity: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 80px;
+    width: 80%;
+    display: flex;
+  }
+  
+  .clock .time span {
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 500;
+    color: #fff;
+  
+  }
+  
+  .time span.colon {
+    width: 2em;
+  }
+  
+  .time span.ms-colon,
+  .time span.millisecond {
+    color: #a970f5;
+  }
+  
+  .clock .buttons {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .buttons button {
+    outline: none;
+    border: none;
+    margin: 0 14px;
+    color: #ffffff;
+    background: #252424;
+    opacity: 80%;
+    font-size: 1.5em;
+    font-weight: 500;
+    border-radius: 50px;
+    padding: 0 20px;
+    cursor: pointer;
+    box-shadow: 10px 10px 20px rgba(63, 62, 62, 0.09);
+  }
+  
+  .buttons button.active,
+  .buttons button.stopActive,
+  .buttons button.resetactive {
+    pointer-events: none;
+    opacity: 0.8;
+  }
+  .background{
+    padding: 10px 10px;
+    width: 80%;
+    margin: 10px;
+    border-radius: 10px;
+    opacity: 1;
+    border: #fff;
+    align-items: center;
+    text-align: center;
+    transform: scale(1) translateX(30px) translateY(900px);
+    transition: transform 1s ease;
+  }
+  .background.active{
+    transform: scale(1) translateX(30px) translateY(160px);
+  }
+
+.bg1{cursor: pointer;}
+.bg2{cursor: pointer;}

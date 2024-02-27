@@ -37,3 +37,5 @@ iconmusics.addEventListener('click', toggleMusicActiveClass);
 iconstat.addEventListener('click', toggleStatActiveClass);
 icontime.addEventListener('click', toggleTimeActiveClass);
 iconhome.addEventListener('click', toggleHomeActiveClass);
+
+
