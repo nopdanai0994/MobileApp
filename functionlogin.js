@@ -8,6 +8,7 @@ const music = document.querySelector(".music");
 const iconstat = document.querySelector(".icon-stat");
 const icontime = document.querySelector(".icon-time");
 const iconhome = document.querySelector(".icon-home");
+const iconbg = document.querySelector(".iconbg");
 function toggleMusicActiveClass() {
     music.classList.toggle('active');
   }
@@ -20,6 +21,9 @@ function toggleTimeActiveClass() {
 function toggleHomeActiveClass() {
     music.classList.remove('active');
 
+  }
+  function toggleBGActiveClass() {
+    wrapper.classList.toggle('active-popup');
   }
 registerLink.addEventListener("click", () => {
   wrapper.classList.add("active");
@@ -37,5 +41,6 @@ iconmusics.addEventListener('click', toggleMusicActiveClass);
 iconstat.addEventListener('click', toggleStatActiveClass);
 icontime.addEventListener('click', toggleTimeActiveClass);
 iconhome.addEventListener('click', toggleHomeActiveClass);
+iconbg.addEventListener('click', toggleBGActiveClass);
 
 

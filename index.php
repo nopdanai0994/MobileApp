@@ -147,9 +147,11 @@
               </li>
               <!------Theme------>
               <li class="list">
+                <div class="iconbg">
                 <a href="#">
                   <span class="icon"><ion-icon name="image-outline"></ion-icon></span>
                 </a>
+              </div>
               </li>
               <!------Doc------>
               <li class="list">
