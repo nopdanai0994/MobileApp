@@ -285,7 +285,7 @@
     height: 60px;
     background: #000000;
     justify-content: center;
-    opacity: 0.7;
+    opacity: 0.8;
     position: relative;
     display: flex;
     align-items: center;
@@ -297,7 +297,7 @@
   
   .toolbars ul {
     display: flex;
-    width: 300px;
+    width: 100%;
   
   }
   
@@ -324,7 +324,7 @@
   .toolbars ul li a .icon {
     position: fixed;
     display: block;
-    font-size: 1cm;
+    font-size: 250%;
     text-align: center;
     color: white;
     cursor: pointer;

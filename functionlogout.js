@@ -16,20 +16,27 @@ const bg2 = document.querySelector(".bg2");
 var html = document.querySelector('body');
 function toggleMusicActiveClass() {
     music.classList.toggle('active');
+    back.classList.remove('active');
+    time.classList.remove('active');
   }
 function toggleStatActiveClass() {
-    time.classList.toggle('active');
+    
   }
 function toggleTimeActiveClass() {
     time.classList.toggle('active');
+    back.classList.remove('active');
+    music.classList.remove('active');
   }
 function toggleHomeActiveClass() {
+    back.classList.remove('active');
     music.classList.remove('active');
     time.classList.remove('active');
 
   }
   function toggleBGActiveClass() {
     back.classList.toggle('active');
+    time.classList.remove('active');
+    music.classList.remove('active');
 
   }
   function backgrounds1(){

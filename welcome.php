@@ -47,7 +47,7 @@
       <div class="music">
         <iframe style="border-radius:12px" 
           src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8Uebhn9wzrS?utm_source=generator&theme=0" 
-          width="95%" 
+          width="100%" 
           height="352" 
           frameBorder="0" 
           allowfullscreen="" 

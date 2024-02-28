@@ -11,12 +11,15 @@
   }
   #overlay {
     position: fixed; /* Sit on top of the page content */
-    width: 100%; /* Full width (cover the whole page) */
+    width: 90%; /* Full width (cover the whole page) */
     height: 100%; /* Full height (cover the whole page) */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    align-items: center;
+    margin: auto;
+    align-items: center;
 
   }
   header {
@@ -24,12 +27,12 @@
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 30px;
+    padding: 3%    5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 99;
-    margin-top: -10%;
+    margin-top: -7%;
   }
   
   .logo {
@@ -86,7 +89,7 @@
     height: 60px;
     background: #000000;
     justify-content: center;
-    opacity: 0.7;
+    opacity: 0.8;
     position: relative;
     display: flex;
     align-items: center;
@@ -98,7 +101,7 @@
   
   .toolbars ul {
     display: flex;
-    width: 300px;
+    width: 100%;
   
   }
   
@@ -125,7 +128,7 @@
   .toolbars ul li a .icon {
     position: fixed;
     display: block;
-    font-size: 1cm;
+    font-size: 250%;
     text-align: center;
     color: white;
     cursor: pointer;
@@ -146,15 +149,15 @@
     cursor: pointer;
   }
   .music{
-    margin-left: 16px;
-    transform: scale(1) translateY(900px) ;
+  margin-left: auto;
+    transform: scale(1) translateY(800%) ;
     transition: transform 1s ease;
     position:relative;
 
     
   }
   .music.active{
-    transform: scale(1) translateY(400px);
+    transform: scale(1) translateY(110%);
   }
   .icon-stat{
     cursor: pointer;
@@ -176,33 +179,33 @@
     transition: transform 1s ease;
   }
   .clock.active{
-    transform: scale(1) translateY(300%);
+    transform: scale(1) translateY(270%);
   }
   
   .clock .time {
-    margin-left: 40px;
     background: hsl(0, 2%, 17%);
-    opacity: 80%;
+    opacity: 95%;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    padding: 1% 0%;
     border-radius: 80px;
-    width: 80%;
+    width: 100%;
     display: flex;
   }
   
   .clock .time span {
     width: 100%;
     text-align: center;
-    font-size: 2em;
+    font-size: 200%;
     font-weight: 500;
     color: #fff;
   
   }
   
   .time span.colon {
-    width: 2em;
+    width: 100%;
   }
   
   .time span.ms-colon,
@@ -218,14 +221,14 @@
   .buttons button {
     outline: none;
     border: none;
-    margin: 0 14px;
+    margin: 0 1%;
     color: #ffffff;
     background: #252424;
-    opacity: 80%;
-    font-size: 1.5em;
+    opacity: 95%;
+    font-size: 150%;
     font-weight: 500;
     border-radius: 50px;
-    padding: 0 20px;
+    padding: 1% 8%;
     cursor: pointer;
     box-shadow: 10px 10px 20px rgba(63, 62, 62, 0.09);
   }
@@ -237,19 +240,18 @@
     opacity: 0.8;
   }
   .background{
-    padding: 10px 10px;
-    width: 80%;
-    margin: 10px;
+    width: 100%;
+    margin: auto;
     border-radius: 10px;
     opacity: 1;
     border: #fff;
     align-items: center;
     text-align: center;
-    transform: scale(1) translateX(30px) translateY(900px);
+    transform: scale(1) translateY(900%);
     transition: transform 1s ease;
   }
   .background.active{
-    transform: scale(1) translateX(30px) translateY(160px);
+    transform: scale(1)  translateY(100%);
   }
 
 .bg1{cursor: pointer;}

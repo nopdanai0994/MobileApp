@@ -18,16 +18,16 @@ $totaltime_user_name = $_SESSION['totaltime_user_name'];
 <body>
     <header>
       <nav class="navigation">
-        <a href="welcome.php"><span class="icon-close"
-            ><ion-icon name="close-circle"></ion-icon
-          ></span></a>
-      </nav>
+        <a href="welcome.php"><span class=""
+            ><ion-icon name="arrow-undo-circle"></ion-icon></span></a>
+        </nav>
+        <h2 class="logo"><img src="images/icon.png" width="100%" height="150px"></h2>
     </header>
     <img class="imagetrophy" src="images/trophyv1.png">
     <img class="imagebackgruondtrophy1" src="images/backgroundtrophy1.1.jpg">
     <img class="imagebackgruondtrophy2" src="images/backgroundtrophy2.2.jpg">
 
-    <?php 
+ <?php 
         $sql_totaltime_data = "SELECT totaltime_user_name, timeformat FROM totaltime_data WHERE totaltime_user_id='$totaltime_user_id'";
         $result_totaltime_data = $conn->query($sql_totaltime_data);
         
