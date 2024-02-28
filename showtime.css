@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.navigation a{
+    color: #000000;
+    font-size: 250%;
+}
+.imagetrophy {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: -1;
+}
+
+.imagebackgruondtrophy1 {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 100%;
+    z-index: -2;
+}
+
+.imagebackgruondtrophy2 {
+    position: absolute;
+    bottom: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: -3;
+}
+
+.totaltime {
+    margin-top: 33%;
+    color: #ffffff;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    background-clip: padding-box; /* ให้ border ไม่ครอบพื้นหลัง */
+    padding: 10px; /* ปรับขนาดของพื้นหลัง */
+    flex-direction: column; /* กำหนดให้แสดงเป็นคอลัมน์ */
+}
+
+.totaltime::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    border: 2px solid black;
+    z-index: -1;
+    opacity: 80%; /* กำหนดความโปร่งแสงของพื้นหลัง */
+    background: #000000;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 50px 50px 50px rgba(255, 255, 255, 0.25);
+    display: flex;
+    margin-left: auto; /* ช่องว่างด้านซ้าย */
+    margin-right: auto; /* ช่องว่างด้านขวา */
+    width: 28%; /* กำหนดความกว้าง */
+    height: auto;
+}
+
+.show-username{
+    align-items: center;
+    display: flex;
+    font-size: 120%;
+    margin-top: 28%;
+    margin-bottom: 2%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-left: auto; /* ช่องว่างด้านซ้าย */
+    margin-right: auto; /* ช่องว่างด้านขวา */
+    width: 93%; /* กำหนดความกว้าง */
+    background-color:#EAA615;
+    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+}
+
+.show-username .imagelogosword{
+    margin-right: 2%;
+    margin-left: 9%;
+    width: 10%;
+    height: 10%;
+}
+
+.time-list {
+    background-color: #ffffff;
+    max-height: 450px; /* สูงสุดของกล่อง */
+    overflow-y: auto; /* เกิดการเลื่อนแถบเลื่อน */
+    margin-left: auto; /* ช่องว่างด้านซ้าย */
+    margin-right: auto; /* ช่องว่างด้านขวา */
+    height: 450px;
+    width: 93%; /* กำหนดความกว้าง */
+    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+}
+
+
+.time-item {
+    z-index: 0;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    padding: 5%;
+    margin: 4%;
+    width: auto;
+    height: auto;
+    box-shadow: 50px 50px 50px rgba(255, 255, 255, 0.25);
+    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+    overflow: hidden; /* ไม่ให้เนื้อหาเกินขอบเส้นขอบ */
+}
+
+.time-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+    z-index: -1;
+    opacity: 25%; /* กำหนดความโปร่งแสงของพื้นหลัง */
+    background-color: #EAA615; /* ตั้งค่าสีพื้นหลังเป็นโปร่งใส */
+}
+
+.date-time {
+    position: relative; /* เพื่อให้เส้นขอบอยู่หน้าข้อความ */
+    z-index: 1; /* ให้ข้อความอยู่หน้าเส้นขอบ */
+    margin-left: 2%;
+}
+
+.date-time .text-datetime {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.date-time .text-datetime .edit-textdate {
+    font-size: 90%;
+}
+
+.date-time .text-datetime .edit-texttime {
+    font-size: 120%;
+}
+
+.date-time .text-subtime {
+    font-size: 70%;
+    display: flex;
+}
+
+.border-timedata {
+    margin-right: 2%;
+    padding: 1%;
+    position: absolute; /* เพื่อให้เส้นขอบอยู่หน้าข้อความ */
+    z-index: 2; /* ให้ข้อความอยู่หน้าเส้นขอบ */
+    width: auto;
+    height: auto;
+    margin-left: 1%;
+    padding-right: 15%;
+    align-items: center;
+    text-align: center;
+    overflow: hidden; /* ไม่ให้เนื้อหาเกินขอบเส้นขอบ */
+    right: 0;
+}
+
+.border-timedata::after {
+    z-index: 1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+    opacity: 25%; /* กำหนดความโปร่งแสงของพื้นหลัง */
+    background-color: #261D09; /* ตั้งค่าสีพื้นหลังเป็นโปร่งใส */
+}
+
+.historytime {
+    z-index: 3;
+    font-size: 150%;
+    padding-top: 10%;
+    padding-left: 23%;
+}
+
+.historytimeformat {
+    z-index: 3;
+    font-size: 50%;
+    padding-left: 23%;
+}
+
+.no-timedata {
+    background-color: #ffffff;
+    border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
+    margin-left: auto; /* ช่องว่างด้านซ้าย */
+    margin-right: auto; /* ช่องว่างด้านขวา */
+    width: 93%; /* กำหนดความกว้าง */
+    padding: 20px;
+    height: 450px;
+    text-align: center;
+}
+

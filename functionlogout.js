@@ -49,60 +49,82 @@ bg2.addEventListener('click', backgrounds2);
 
 /*time*/
 let hr = min = sec = ms = "0" + 0,
-startTimer;
+    startTimer;
 
-const startBtn = document.querySelector(".start"),
-stopBtn = document.querySelector(".stop"),
-resetBtn = document.querySelector(".reset");
-
-startBtn.addEventListener("click", start);
-stopBtn.addEventListener("click", stop);
-resetBtn.addEventListener("click", reset);
+let startBtn = document.getElementById('startBtn');
+let stopBtn = document.getElementById('stopBtn');
+let resetBtn = document.getElementById('resetBtn');
 
 function start() {
-startBtn.classList.add("active");
-stopBtn.classList.remove("stopActive");
+    startBtn.disabled = true;  
+    stopBtn.disabled = false;  
+    resetBtn.disabled = false; 
+    startTimer = setInterval(() => {
+        ms++
+        ms = ms < 10 ? "0" + ms : ms;
 
-startTimer = setInterval(() => {
-  ms++
-  ms = ms < 10 ? "0" + ms : ms;
-
-  if (ms == 100) {
-    sec++;
-    sec = sec < 10 ? "0" + sec : sec;
-    ms = "0" + 0;
-  }
-  if (sec == 60) {
-    min++;
-    min = min < 10 ? "0" + min : min;
-    sec = "0" + 0;
-  }
-  if (min == 60) {
-    hr++;
-    hr = hr < 10 ? "0" + hr : hr;
-    min = "0" + 0;
-  }
-  putValue();
-}, 10);
-
+        if (ms == 100) {
+            sec++;
+            sec = sec < 10 ? "0" + sec : sec;
+            ms = "0" + 0;
+        }
+        if (sec == 60) {
+            min++;
+            min = min < 10 ? "0" + min : min;
+            sec = "0" + 0;
+        }
+        if (min == 60) {
+            hr++;
+            hr = hr < 10 ? "0" + hr : hr;
+            min = "0" + 0;
+        }
+        putValue();
+    }, 10);
 }
 
 function stop() {
-startBtn.classList.remove("active");
-stopBtn.classList.add("stopActive");
-clearInterval(startTimer);
+    startBtn.disabled = false;  
+    stopBtn.disabled = false;  
+    resetBtn.disabled = false; 
+    clearInterval(startTimer);
 }
+
 function reset() {
-startBtn.classList.remove("active");
-stopBtn.classList.remove("stopActive");
-clearInterval(startTimer);
-hr = min = sec = ms = "0" + 0;
-putValue();
+    startBtn.disabled = false;  
+    stopBtn.disabled = true;  
+    resetBtn.disabled = true; 
+    clearInterval(startTimer);
+    sendTimeToServer(); // เพิ่มบรรทัดนี้เพื่อส่งข้อมูลเวลาไปยังเซิร์ฟเวอร์เมื่อหยุด
+    hr = min = sec = ms = "0" + 0;
+    putValue();
 }
 
 function putValue() {
-document.querySelector(".millisecond").innerText = ms;
-document.querySelector(".second").innerText = sec;
-document.querySelector(".minute").innerText = min;
-document.querySelector(".hour").innerText = hr;
+    document.querySelector(".millisecond").innerText = ms;
+    document.querySelector(".second").innerText = sec;
+    document.querySelector(".minute").innerText = min;
+    document.querySelector(".hour").innerText = hr;
 }
+
+function sendTimeToServer() {
+    const timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    $.ajax({
+        type: "POST",
+        url: "save_time.php", // URL of your PHP file
+        data: {
+            hour: hr,
+            minute: min,
+            second: sec,
+            timezone: timeZone // ส่งโซนเวลาไปด้วย
+        },
+        success: function(response) {
+            console.log('Time saved successfully');
+            console.log(timeZone);
+        }
+    });
+}
+
+$('.show-time').click(function(e) {
+    e.preventDefault(); // ป้องกันการโหลดหน้าใหม่
+    window.location.href = $(this).attr('href'); // ส่งไปยังหน้าเว็บใหม่
+});

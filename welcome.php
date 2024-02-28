@@ -1,14 +1,16 @@
- <?php 
-  session_start(); 
+  <?php 
+  include('server.php');
 
   if (!isset($_SESSION['username'])) {
   	$_SESSION['msg'] = "You must log in first";
-  	header('location: login.php');
+  	header('location: index.php');
+    exit();
   }
   if (isset($_GET['logout'])) {
   	session_destroy();
   	unset($_SESSION['username']);
   	header("location: index.php");
+    exit();
   }
 ?>
 <!DOCTYPE html>
@@ -36,9 +38,9 @@
 
   <body>
     <header>
-      <h2 class="logo"><img src="images/icon.png" width="120" height="120"></h2>
+      <h2 class="logo"><img src="images/icon.png" width="70%" height="50%"></h2>
       <nav class="navigation">
-        <a href="#">LOGOUT</a>
+        <a href="index.php?logout='1'">LOGOUT</a>
       </nav>
     </header>
     <div id="overlay">
@@ -63,14 +65,14 @@
           <span class="millisecond">00</span>
         </div>
         <div class="buttons">
-          <button class="start">Start</button>
-          <button class="stop">Stop</button>
-          <button class="reset">Reset</button>
+        <button class="start" onclick="start()" id="startBtn">Start</button>
+        <button class="stop" onclick="stop()" id="stopBtn" disabled>Stop</button>
+        <button class="reset" onclick="reset()" id="resetBtn" disabled>Reset</button>
         </div>
       </div>
       <div class="background">
-       <span class = "bg1"><img src="images/bg.gif" width="120" height="120" style="border: 3px solid #eeeeee;   "></span>
-       <span class = "bg2"><img src="images/bg1.gif" width="120" height="120" style="border: 3px solid #eeeeee;   "></span>
+       <span class = "bg1"><img src="images/bg.gif" width="150px" height="150px" style="border: 3px solid #eeeeee;   "></span>
+       <span class = "bg2"><img src="images/bg1.gif" width="150px" height="150px" style="border: 3px solid #eeeeee;   "></span>
       </div>
     </div>
     <bottom>
@@ -115,7 +117,7 @@
                <!------stat------>
                <li class="list">
                 <div class="icon-stat">
-                <a href="#">
+                <a href="show_time.php">
                   <span class="icon"><ion-icon name="stats-chart-outline"></ion-icon></ion-icon></span>
                 </a>
                  </div>
@@ -124,6 +126,7 @@
             </ul>
           </div>
     </bottom>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="functionlogout.js"></script>
     <script
       type="module"

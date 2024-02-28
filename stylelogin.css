@@ -20,7 +20,7 @@
 
   }
   header {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -29,13 +29,12 @@
     justify-content: space-between;
     align-items: center;
     z-index: 99;
+    margin-top: -10%;
   }
   
   .logo {
     margin-left: -25px;
-    margin-top: -20px;
   }
-  .navigation{margin-top: -25px;}
   .navigation a {
     position: relative;
     font-size: 1.1em;
@@ -173,11 +172,11 @@
 
   .clock {
     user-select: none;
-    transform: scale(1) translateY(2500px);
+    transform: scale(1) translateY(2500%);
     transition: transform 1s ease;
   }
   .clock.active{
-    transform: scale(1) translateY(300px);
+    transform: scale(1) translateY(300%);
   }
   
   .clock .time {

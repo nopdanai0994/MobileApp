@@ -4,12 +4,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'PT Sans', sans-serif;
-    overflow: hidden;
     align-items: center;
+    overflow: hidden;
     justify-content: space-between;
     color: #fff;
   }
-  
   header {
     position: fixed;
     top: 0;
@@ -82,6 +81,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    width:100vw;
     background: url('images/bg.gif') no-repeat;
     background-size: cover;
     background-position: center;
@@ -345,12 +345,14 @@
     cursor: pointer;
   }
   .music{
-    transform: scale(0) translateX(5%);
+    margin: auto;
+    transform: scale(1) translateY(170%) translateX(5%);
     transition: transform 1s ease, height .2s ease;
+    z-index: 99;
     
   }
   .music.active{
-    transform: scale(1) translateY(-170px) translateX(5%);
+    transform: scale(1) translateY(-123%) translateX(2%);
   }
   .icon-stat{
     cursor: pointer;
@@ -363,4 +365,14 @@
   }
   .iconnote{
     cursor: pointer;
+  }
+  .error{color: #fff;}
+  #overlay {
+    position: absolute;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }

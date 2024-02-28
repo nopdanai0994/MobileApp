@@ -24,7 +24,7 @@
 
   <body>
     <header>
-      <h2 class="logo"><img src="images/icon.png" width="120" height="120"></h2>
+      <h2 class="logo"><img src="images/icon.png" width="100%" height="150"></h2>
       <nav class="navigation">
 
         <button class="btnLogin-popup">Login</button>
@@ -46,7 +46,7 @@
                   ><ion-icon name="person-circle"></ion-icon
                 ></span>
                 <input type="text" name="username" required />
-                <label>Username</label>
+                <label>USERNAME</label>
               </div>
               <div class="input-box">
                 <span class="icon"
@@ -71,19 +71,19 @@
 
           <div class="form-box register">
             <h2>Register</h2>
-            <form method="post">
+            <form  method="post">
             <?php include('errors.php'); ?>
               <div class="input-box">
                 <span class="icon"><ion-icon name="mail"></ion-icon></span>
                 <input type="email" name="email" value = "<?php echo $email; ?>" required />
-                <label>Email</label>
+                <label>EMAIL</label>
               </div>
               <div class="input-box">
                 <span class="icon"
                   ><ion-icon name="person-circle"></ion-icon
                 ></span>
                 <input type="text" name="username" value="<?php echo $username; ?>" required />
-                <label>Username</label>
+                <label>USERNAME</label>
               </div>
               <div class="input-box">
                 <span class="icon"
@@ -97,11 +97,11 @@
                   ><ion-icon name="lock-closed"></ion-icon>
                 </span>
                 <input type="password" name="password_2" required />
-                <label>Confirm PASSWORD</label>
+                <label>CONFIRM PASSWORD</label>
               </div>
               <div class="remember-forgot">
                 <label
-                  ><input type="checkbox" />I agree to the terms &
+                  ><input type="checkbox" required />I agree to the terms &
                   conditions</label
                 >
               </div>
@@ -120,8 +120,8 @@
       <div class="music">
         <iframe style="border-radius:12px" 
           src="https://open.spotify.com/embed/playlist/37i9dQZF1DX8Uebhn9wzrS?utm_source=generator&theme=0" 
-          width="90%" 
-          height="100" 
+          width="95%" 
+          height="352" 
           frameBorder="0" 
           allowfullscreen="" 
           allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
