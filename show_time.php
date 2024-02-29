@@ -23,8 +23,8 @@ $totaltime_user_name = $_SESSION['totaltime_user_name'];
         </nav>
         <h2 class="logo"><img src="images/icon.png" width="100%" height="150px"></h2>
     </header>
-    <img class="imagetrophy" src="images/trophyv1.png">
-    <img class="imagebackgruondtrophy1" src="images/backgroundtrophy1.1.jpg">
+    <img class="imagetrophy" src="images/trophyv1.png" width="100%">
+   <img class="imagebackgruondtrophy1" src="images/backgroundtrophy1.1.jpg">
     <img class="imagebackgruondtrophy2" src="images/backgroundtrophy2.2.jpg">
 
  <?php 

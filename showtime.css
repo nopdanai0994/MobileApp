@@ -5,12 +5,14 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    overflow: hidden;
 }
 header{
     position: relative;
     top: 0;
     left: 0;
     width: 100%;
+    padding: 3% 3%;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -18,6 +20,8 @@ header{
     margin-top: -8%;
     margin-left: 5%;
 }
+body{width: 100vw;
+    height: 100vh;}
 .navigation{margin-left: 0%;
     margin-top:0;}
 .navigation a{
@@ -28,6 +32,7 @@ header{
     height: 45px;
 }
 h2{margin-left: 15%;}
+
 .imagetrophy {
     position: absolute;
     top: 0;
@@ -39,12 +44,13 @@ h2{margin-left: 15%;}
 
 .imagebackgruondtrophy1 {
     position: fixed;
+    width: 100vh;
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
-
     width: 100%;
     z-index: -2;
+    overflow: hidden;
 }
 
 .imagebackgruondtrophy2 {
@@ -54,16 +60,17 @@ h2{margin-left: 15%;}
     transform: translateX(-50%);
     width: 100%;
     z-index: -3;
+    overflow: hidden;
 }
 
 .totaltime {
-    margin-top: 33%;
+    margin-top: -2%;
     color: #ffffff;
     position: relative;
     z-index: 2;
     text-align: center;
     background-clip: padding-box; /* ให้ border ไม่ครอบพื้นหลัง */
-    padding: 10px; /* ปรับขนาดของพื้นหลัง */
+    padding: 0px; /* ปรับขนาดของพื้นหลัง */
     flex-direction: column; /* กำหนดให้แสดงเป็นคอลัมน์ */
 }
 
@@ -133,11 +140,11 @@ h2{margin-left: 15%;}
     text-align: center;
     padding: 5%;
     margin: 4%;
-    width: auto;
+    overflow-x: auto;
+    width: 93%;
     height: auto;
     box-shadow: 50px 50px 50px rgba(255, 255, 255, 0.25);
     border-radius: 40px; /* ปรับมุมของขอบให้เล็กลง */
-    overflow: hidden; /* ไม่ให้เนื้อหาเกินขอบเส้นขอบ */
 }
 
 .time-item::after {
@@ -179,13 +186,14 @@ h2{margin-left: 15%;}
 }
 
 .border-timedata {
+    transform: translateX(-3%);
     margin-right: 2%;
     padding: 1%;
     position: absolute; /* เพื่อให้เส้นขอบอยู่หน้าข้อความ */
     z-index: 2; /* ให้ข้อความอยู่หน้าเส้นขอบ */
     width: auto;
     height: auto;
-    margin-left: 1%;
+    margin-left: -1%;
     padding-right: 15%;
     align-items: center;
     text-align: center;
@@ -207,16 +215,16 @@ h2{margin-left: 15%;}
 }
 
 .historytime {
+    transform: translateX(20%);
     z-index: 3;
     font-size: 150%;
     padding-top: 10%;
-    padding-left: 23%;
 }
 
 .historytimeformat {
+    transform: translateX(20%);
     z-index: 3;
     font-size: 50%;
-    padding-left: 23%;
 }
 
 .no-timedata {
